@@ -1,0 +1,164 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/bvfR2SG/back-spine-protector.png",
+      "name": "Back Spine Protector",
+      "description": "In case of an impact, a collision, or a fall, the back protection prevents an upper-body injury. ",
+      "price": 110,
+      "quantity": 17,
+      "dealer": "Pranay Chakraborty"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/ZYYWWVh/bike-repair-kit.png",
+      "name": "Bike Repair Kit",
+      "description": "Bike repair stands to lift both wheels high off the ground and need to be really stable so you can work on your bike without it falling over.",
+      "price": 200,
+      "quantity": 5,
+      "dealer": "Dip Biswas"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/7nZr8v6/bungee-cord.png",
+      "name": "Bungee Cord",
+      "description": "Bungee cords are most often used to secure objects without tying knots and to absorb shock.",
+      "price": 30,
+      "quantity": 11,
+      "dealer": "Dip Biswas"
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/PDwwZn3/camping-tent.png",
+      "name": "Camping Tent",
+      "description": "Tents are used as habitation by nomads, recreational campers, soldiers, and disaster victims.",
+      "price": 400,
+      "quantity": 7,
+      "dealer": "Anjan Ray"
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/8nCr2Kg/chest-protector.png",
+      "name": "Chest Protector",
+      "description": "A chest protector is a piece of protective equipment worn by catchers and home plate umpires.",
+      "price": 210,
+      "quantity": 15,
+      "dealer": "Dipan Roy"
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/zPjqvDL/elbow-guards.png",
+      "name": "Elbow Guards",
+      "description": "Elbow pads are the protective padded gear that athletes wear to prevent them from probable injuries and bruises.",
+      "price": 130,
+      "quantity": 13,
+      "dealer": "Sutanu Datta"
+    },
+    {
+      "id": 7,
+      "image": "https://i.ibb.co/Hgsy64V/external-fuel-can.png",
+      "name": "External Fuel Can",
+      "description": "Most worryingly, panicked buyers are using inappropriate containers to store and transport extra fuel.",
+      "price": 90,
+      "quantity": 10,
+      "dealer": "Aditya Adi"
+    },
+    {
+      "id": 8,
+      "image": "https://i.ibb.co/PzM2dLv/gloves.png",
+      "name": "Gloves",
+      "description": "Riding gloves are designed to provide grip, and comfort, and enhance the safety of your palm while you ride your bike.",
+      "price": 270,
+      "quantity": 19,
+      "dealer": "Saikat Roy"
+    },
+    {
+      "id": 9,
+      "image": "https://i.ibb.co/R6G5FZN/helmet.png",
+      "name": "Helmet",
+      "description": "Helmets are useful as safety gear to prevent injuries in an uncontrolled environment.",
+      "price": 900,
+      "quantity": 13,
+      "dealer": "Sankhadeep Chakrobarty"
+    },
+    {
+      "id": 10,
+      "image": "https://i.ibb.co/k0pRz1f/jacket.png",
+      "name": "Jacket",
+      "description": "Riding jackets come with shoulder, elbow, and back protectors and are made of specialized material that protects your skin from abrasion in case of an impact.",
+      "price": 1300,
+      "quantity": 12,
+      "dealer": "Sujon Dutta"
+    },
+    {
+      "id": 11,
+      "image": "https://i.ibb.co/mDMjqLS/knee-guard.png",
+      "name": "Knee Guard",
+      "description": "Knee guards are for riders who wish to protect their knee and shin area in case of a crash.",
+      "price": 350,
+      "quantity": 25,
+      "dealer": "Dipan Chakraborty"
+    },
+    {
+      "id": 12,
+      "image": "https://i.ibb.co/wzG4fqH/pant.png",
+      "name": "Pant",
+      "description": "Riding pants protect your knees from scrapes and serious injuries should you fall while riding.",
+      "price": 800,
+      "quantity": 13,
+      "dealer": "Anik Sarkar"
+    },
+    {
+      "id": 13,
+      "image": "https://i.ibb.co/0F9GLWt/saddle-bag.png",
+      "name": "Saddle Bag",
+      "description": "Smaller bags are typically used to hold a few items such as spare inner tubes, rain gear, food, first-aid kit, etc.",
+      "price": 550,
+      "quantity": 21,
+      "dealer": "Biswajit Sarkar"
+    },
+    {
+      "id": 14,
+      "image": "https://i.ibb.co/VWNZ7cy/shoes.png",
+      "name": "Shoes",
+      "description": "In most motorcycle accidents, the toe and ankle areas are most affected.",
+      "price": 1010,
+      "quantity": 7,
+      "dealer": "Sahil Ghosh"
+    },
+    {
+      "id": 15,
+      "image": "https://i.ibb.co/mBCt8by/swiss-knife.png",
+      "name": "Swiss Knife",
+      "description": "The Swiss Army knife is the ultimate multi-tool. Whether you need a magnifying glass to read the fine print or a metal saw to cut through iron.",
+      "price": 430,
+      "quantity": 17,
+      "dealer": "Saheb Acharjee"
+    },
+    {
+      "id": 16,
+      "image": "https://i.ibb.co/8DWRx6X/tail-bag.png",
+      "name": "Tail Bag",
+      "description": "Tail bags are the most under-rated of all motorcycle luggage systems.",
+      "price": 530,
+      "quantity": 27,
+      "dealer": "Soumya Dip Dey"
+    },
+    {
+      "id": 17,
+      "image": "https://i.ibb.co/VDyYN34/tank-bag.png",
+      "name": "Tank Bag",
+      "description": "A tank bag is great for the storage of items you may need to get at while you're riding.",
+      "price": 530,
+      "quantity": 23,
+      "dealer": "Koushik Karmakar"
+    },
+    {
+      "id": 18,
+      "image": "https://i.ibb.co/JnYXzL8/torch.png",
+      "name": "Torch Light",
+      "description": "Flashlights are used as a light source outdoors, in places without permanently installed lighting, during power outages, or when a portable light source is needed.",
+      "price": 270,
+      "quantity": 29,
+      "dealer": "Akash Das"
+    }
+  ]

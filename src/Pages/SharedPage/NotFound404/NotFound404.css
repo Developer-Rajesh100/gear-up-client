@@ -1,0 +1,10 @@
+.not-found-header{
+    color: #fb923c;
+}
+.not-found-container h1{
+    font-weight: 600;
+    font-size: 70px;
+}
+.not-found-container{
+    margin-top: 200px;
+}

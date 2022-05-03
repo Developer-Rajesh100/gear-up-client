@@ -1,0 +1,20 @@
+.hr{
+    width: 90%;
+}
+.hr-container{
+    display: flex;
+    justify-content: center;
+}
+.hr-container hr{
+    height: 5px;
+}
+.cart-con{
+    /* border: 1px solid black; */
+}
+.cart-con img{
+    width: 100%;
+}
+.cart-con-parent{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,31 @@
+.sign-up-form-container{
+    margin-top: 200px;
+}
+.input-fild{
+    width: 50%;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sign-in-link{
+    text-decoration: none;
+}
+
+.social-login-btn{
+    border: none;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 10px 20px  0 ;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.google-logo{
+    width: 30px;
+    padding-right: 7px;
+}
+.social-login-btn:hover{
+    background-color: #e4e4e4;
+    font-weight: 600;
+}
