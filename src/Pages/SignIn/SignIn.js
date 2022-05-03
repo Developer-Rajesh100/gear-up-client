@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import auth from "../../Firebase.Init";
 import "./SignIn.css";
 const SignIn = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
     <div>
       <div className="container sign-in-form-container">
@@ -34,7 +40,10 @@ const SignIn = () => {
           />
         </form>
         <div className="d-flex justify-content-center">
-          <button className="d-flex social-login-btn">
+          <button
+            onClick={() => signInWithGoogle()}
+            className="d-flex social-login-btn"
+          >
             <img
               className="google-logo"
               src="https://i.ibb.co/3fn58k4/google.png"
