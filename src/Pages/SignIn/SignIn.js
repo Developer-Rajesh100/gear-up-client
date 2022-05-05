@@ -7,6 +7,9 @@ import {
 import auth from "../../Firebase.Init";
 import "./SignIn.css";
 const SignIn = () => {
+  //SIGN IN WITH EMAIL AND PASSWORD
+
+  //GOOGLE SIGN IN
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
     <div>

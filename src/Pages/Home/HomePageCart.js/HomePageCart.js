@@ -13,12 +13,12 @@ const HomePageCart = () => {
       <div className="hr-container my-5">
         <hr className="hr" />
       </div>
-      <h1 className="my-5">
+      <h1 className="my-5 title">
         <u>Products</u>
       </h1>
 
       <div className="cart-con-parent">
-        <div className="container row row-cols-3 cart-con">
+        <div className="container row row-cols-xs-1 row-cols-sm-2 row-cols-md-3 cart-con">
           {Cart.map((cart) => (
             <HomeCart key={cart.id} cart={cart}></HomeCart>
           ))}

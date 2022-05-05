@@ -1,28 +1,36 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomeCart.css";
 const HomeCart = ({ cart }) => {
+  const { id, image, name, description, price, quantity, dealer } = cart;
+  const navigate = useNavigate();
+  const navigateToProductDetails = (id) => {
+    navigate(`/productdetails/${id}`);
+  };
   return (
     <div>
       <div key={cart.id}>
-        <div className="cart">
-          <img src={cart.image} alt="" />
+        <div className="cart shadow-lg">
+          <img src={image} alt="" />
           <p>
-            <strong>{cart.name}</strong>
+            <strong>{name}</strong>
             <br />
             <small className="product-description">
-              Description: {cart.description}
+              <strong>Description:</strong> {description}
             </small>
             <br />
             <strong>Price: </strong>
-            <i>${cart.price}</i>
+            <i>${price}</i>
             <br />
             <strong>Quantity: </strong>
-            <i>{cart.quantity}</i>
+            <i>{quantity}</i>
             <br />
             <strong> Dealer: </strong>
-            <i>{cart.dealer}</i>
+            <i>{dealer}</i>
           </p>
-          <button className="btn">Update</button>
+          <button onClick={() => navigateToProductDetails(id)} className="btn">
+            Update
+          </button>
         </div>
       </div>
     </div>

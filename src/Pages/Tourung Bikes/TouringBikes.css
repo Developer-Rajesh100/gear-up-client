@@ -1,0 +1,23 @@
+.hr hr{
+    width: 95%;
+    height: 5px;
+}
+.hr{
+    display: flex;
+    justify-content: center;
+}
+.cart-button{
+    text-decoration: none;
+    background-color: #5f5f5f;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+}
+.cart-button:hover{
+    background-color: #3d3d3d;
+    color: white;
+    font-weight: 600;
+}
