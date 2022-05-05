@@ -12,6 +12,8 @@ const Navebar = () => {
             <Nav className="me-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#products">Products</Nav.Link>
+              <Nav.Link href="#bikes">Bikes</Nav.Link>
+              <Nav.Link href="#places">Places</Nav.Link>
               <Nav.Link href="/blogs">Blogs</Nav.Link>
             </Nav>
             <Nav>

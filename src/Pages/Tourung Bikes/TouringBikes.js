@@ -3,12 +3,12 @@ import { Card, CardGroup } from "react-bootstrap";
 import "./TouringBikes.css";
 const TouringBikes = () => {
   return (
-    <div>
+    <div id="bikes">
       <div className="hr container mt-5 mb-5">
         <hr />
       </div>
       <h1>
-        <u className="title">Best Touring Bikes</u>
+        <u className="title">Best Bikes For Touring</u>
       </h1>
       <div className="container mt-5">
         <CardGroup>
