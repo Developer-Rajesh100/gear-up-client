@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 const ProductDetails = () => {
   const { productdetailsId } = useParams();
   return (
-    <div>
-      <h1>Welcome to Product Details!!! </h1>
+    <div className="mt-5">
+      <h1>Welcome to Product Details!!! {productdetailsId} </h1>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
@@ -9,14 +9,25 @@ import "./SignIn.css";
 const SignIn = () => {
   //SIGN IN WITH EMAIL AND PASSWORD
 
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    console.log(email, password);
+  };
+
   //GOOGLE SIGN IN
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
     <div>
       <div className="container sign-in-form-container">
         <h1 className="mb-5">Sign In</h1>
-        <form className="form-container">
+        <form onSubmit={handleSubmit} className="form-container">
           <input
+            ref={emailRef}
             type="email"
             name="email"
             id="email"
@@ -26,6 +37,7 @@ const SignIn = () => {
           />
           <br />
           <input
+            ref={passwordRef}
             type="password"
             name="password"
             id="password"

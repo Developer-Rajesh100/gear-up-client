@@ -8,14 +8,20 @@ import auth from "../../Firebase.Init";
 import "./SignUp.css";
 const SignUp = () => {
   //SIGN UP WITH EMAIL AND PASSWORD
-
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    console.log(name, email, password);
+  };
   //GOOGLE SIGN UP
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
     <div>
       <div className="container sign-up-form-container">
         <h1 className="mb-5">Sign Up</h1>
-        <form className="form-container">
+        <form onSubmit={handleRegister} className="form-container">
           <input
             type="text"
             name="name"
