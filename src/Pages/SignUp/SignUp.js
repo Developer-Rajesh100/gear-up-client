@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
+  useCreateUserWithEmailAndPassword,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -8,15 +9,22 @@ import auth from "../../Firebase.Init";
 import "./SignUp.css";
 const SignUp = () => {
   //SIGN UP WITH EMAIL AND PASSWORD
+  const [createUserWithEmailAndPassword, user1, loading1, error1] =
+    useCreateUserWithEmailAndPassword(auth);
   const handleRegister = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(name, email, password);
+    createUserWithEmailAndPassword(email, password);
   };
+
   //GOOGLE SIGN UP
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
+  if (user) {
+    navigate("/");
+  }
   return (
     <div>
       <div className="container sign-up-form-container">

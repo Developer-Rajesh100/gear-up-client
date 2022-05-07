@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -8,6 +8,8 @@ import auth from "../../Firebase.Init";
 import "./SignIn.css";
 const SignIn = () => {
   //SIGN IN WITH EMAIL AND PASSWORD
+  const [signInWithEmailAndPassword, user1, loading1, error1] =
+    useSignInWithEmailAndPassword(auth);
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -16,11 +18,15 @@ const SignIn = () => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log(email, password);
+    signInWithEmailAndPassword(email, password);
   };
 
   //GOOGLE SIGN IN
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
+  if (user) {
+    navigate("/");
+  }
   return (
     <div>
       <div className="container sign-in-form-container">
