@@ -3,6 +3,7 @@ import "./App.css";
 import Blogs from "./Pages/Blogs/Blogs";
 import Home from "./Pages/Home/Home";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
+import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import Footer from "./Pages/SharedPage/Footer/Footer";
 import Navebar from "./Pages/SharedPage/Navebar/Navebar";
 import NotFound404 from "./Pages/SharedPage/NotFound404/NotFound404";
@@ -17,11 +18,19 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route
+        {/* <Route
           path="/productdetails/:productdetailsId"
           element={<ProductDetails></ProductDetails>}
+        ></Route> */}
+        <Route
+          path="/productdetails/:productdetailsId"
+          element={
+            <RequireAuth>
+              <ProductDetails></ProductDetails>
+            </RequireAuth>
+          }
         ></Route>
-        <Route path="/signin" element={<SignIn></SignIn>}></Route>
+        <Route path="/login" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="*" element={<NotFound404></NotFound404>}></Route>
       </Routes>

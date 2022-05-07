@@ -1,8 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase.Init";
+import { signOut } from "firebase/auth";
 
 const Navebar = () => {
+  const [user] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+  };
+
   return (
     <div>
       <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -17,9 +26,15 @@ const Navebar = () => {
               <Nav.Link href="/home#places">Places</Nav.Link>
               <Nav.Link href="/blogs">Blogs</Nav.Link>
             </Nav>
-            <Nav>
-              <Nav.Link href="/signin">Sign In</Nav.Link>
-            </Nav>
+            {user ? (
+              <Nav>
+                <Nav.Link onClick={handleSignOut}>Sign Out</Nav.Link>
+              </Nav>
+            ) : (
+              <Nav>
+                <Nav.Link href="/login">Sign In</Nav.Link>
+              </Nav>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
