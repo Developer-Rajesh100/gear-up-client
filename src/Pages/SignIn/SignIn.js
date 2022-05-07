@@ -6,6 +6,8 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../Firebase.Init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./SignIn.css";
 const SignIn = () => {
   //SIGN IN WITH EMAIL AND PASSWORD
@@ -43,8 +45,12 @@ const SignIn = () => {
   }
   const resetPassword = async () => {
     const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
-    alert("Sent email");
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent Email");
+    } else {
+      toast("Enter Email Address");
+    }
   };
   return (
     <div>
@@ -74,13 +80,13 @@ const SignIn = () => {
             <Link className="sign-up-link mt-1 mx-2 mb-1" to="/signup">
               Creat Account
             </Link>
-            <Link
+            <button
               onClick={resetPassword}
-              className="text-danger text-decoration-none mt-1 mx-2 mb-1"
+              className="text-danger border-0 bg-light mt-1 mx-2 mb-1"
               to="/"
             >
               Forgot Password
-            </Link>
+            </button>
           </div>
           <input
             className="form-control input-fild mt-1 mb-1"
@@ -104,6 +110,7 @@ const SignIn = () => {
       </div>
       <br />
       {errorHandle}
+      <ToastContainer />
     </div>
   );
 };
