@@ -16,15 +16,27 @@ const Navebar = () => {
     <div>
       <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Gear Up</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            Gear Up
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/home#products">Products</Nav.Link>
-              <Nav.Link href="/home#bikes">Bikes</Nav.Link>
-              <Nav.Link href="/home#places">Places</Nav.Link>
-              <Nav.Link href="/blogs">Blogs</Nav.Link>
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/home#products">
+                Products
+              </Nav.Link>
+              <Nav.Link as={Link} to="/home#bikes">
+                Bikes
+              </Nav.Link>
+              <Nav.Link as={Link} to="/home#places">
+                Places
+              </Nav.Link>
+              <Nav.Link as={Link} to="/blogs">
+                Blogs
+              </Nav.Link>
             </Nav>
             {user ? (
               <Nav>
@@ -32,7 +44,9 @@ const Navebar = () => {
               </Nav>
             ) : (
               <Nav>
-                <Nav.Link href="/login">Sign In</Nav.Link>
+                <Nav.Link as={Link} to="/login">
+                  Sign In
+                </Nav.Link>
               </Nav>
             )}
           </Navbar.Collapse>

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
@@ -28,6 +29,23 @@ const SignIn = () => {
   if (user) {
     navigate(from, { replace: true });
   }
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  let errorHandle;
+  if (error || error1) {
+    errorHandle = (
+      <p className="text-danger">
+        <strong>Error:</strong>{" "}
+        <i>
+          {error?.message} {error1?.message}
+        </i>
+      </p>
+    );
+  }
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    await sendPasswordResetEmail(email);
+    alert("Sent email");
+  };
   return (
     <div>
       <div className="container sign-in-form-container">
@@ -52,9 +70,18 @@ const SignIn = () => {
             required
             className="form-control input-fild"
           />
-          <Link className="sign-up-link mt-1 mb-1" to="/signup">
-            Creat Account
-          </Link>
+          <div className="d-flex">
+            <Link className="sign-up-link mt-1 mx-2 mb-1" to="/signup">
+              Creat Account
+            </Link>
+            <Link
+              onClick={resetPassword}
+              className="text-danger text-decoration-none mt-1 mx-2 mb-1"
+              to="/"
+            >
+              Forgot Password
+            </Link>
+          </div>
           <input
             className="form-control input-fild mt-1 mb-1"
             type="submit"
@@ -75,6 +102,8 @@ const SignIn = () => {
           </button>
         </div>
       </div>
+      <br />
+      {errorHandle}
     </div>
   );
 };

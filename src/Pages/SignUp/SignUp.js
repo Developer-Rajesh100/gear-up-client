@@ -6,11 +6,12 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../Firebase.Init";
+import { sendEmailVerification } from "firebase/auth";
 import "./SignUp.css";
 const SignUp = () => {
   //SIGN UP WITH EMAIL AND PASSWORD
   const [createUserWithEmailAndPassword, user1, loading1, error1] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const handleRegister = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -24,6 +25,17 @@ const SignUp = () => {
   const navigate = useNavigate();
   if (user) {
     navigate("/");
+  }
+  let errorHandle;
+  if (error || error1) {
+    errorHandle = (
+      <p className="text-danger">
+        <strong>Error:</strong>{" "}
+        <i>
+          {error?.message} {error1?.message}
+        </i>
+      </p>
+    );
   }
   return (
     <div>
@@ -56,7 +68,7 @@ const SignUp = () => {
             required
             className="form-control input-fild"
           />
-          <Link className="sign-in-link mt-1 mb-1" to="/signin">
+          <Link className="sign-in-link mt-1 mb-1" to="/login">
             Sign In
           </Link>
           <input
@@ -79,6 +91,8 @@ const SignUp = () => {
           </button>
         </div>
       </div>
+      <br />
+      {errorHandle}
     </div>
   );
 };
