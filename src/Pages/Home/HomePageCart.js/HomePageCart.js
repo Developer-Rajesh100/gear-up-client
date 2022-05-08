@@ -4,7 +4,7 @@ import "./HomePageCart.css";
 const HomePageCart = () => {
   const [Cart, setCart] = useState([]);
   useEffect(() => {
-    fetch("CartData.json")
+    fetch("http://localhost:5000/product")
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, []);
@@ -20,7 +20,7 @@ const HomePageCart = () => {
       <div className="cart-con-parent">
         <div className="container row row-cols-xs-1 row-cols-sm-2 row-cols-md-3 cart-con">
           {Cart.map((cart) => (
-            <HomeCart key={cart.id} cart={cart}></HomeCart>
+            <HomeCart key={cart._id} cart={cart}></HomeCart>
           ))}
         </div>
       </div>

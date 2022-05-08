@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomeCart.css";
 const HomeCart = ({ cart }) => {
-  const { id, image, name, description, price, quantity, dealer } = cart;
+  const { _id, image, name, description, price, quantity, dealer } = cart;
   const navigate = useNavigate();
   const navigateToProductDetails = (id) => {
     navigate(`/productdetails/${id}`);
   };
   return (
     <div>
-      <div key={cart.id}>
+      <div key={cart._id}>
         <div className="cart shadow-lg">
           <img src={image} alt="" />
           <p>
@@ -28,7 +28,7 @@ const HomeCart = ({ cart }) => {
             <strong> Dealer: </strong>
             <i>{dealer}</i>
           </p>
-          <button onClick={() => navigateToProductDetails(id)} className="btn">
+          <button onClick={() => navigateToProductDetails(_id)} className="btn">
             Update
           </button>
         </div>
