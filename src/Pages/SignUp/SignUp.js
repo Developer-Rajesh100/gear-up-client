@@ -23,7 +23,7 @@ const SignUp = () => {
   //GOOGLE SIGN UP
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
-  if (user) {
+  if (user || user1) {
     navigate("/");
   }
   let errorHandle;

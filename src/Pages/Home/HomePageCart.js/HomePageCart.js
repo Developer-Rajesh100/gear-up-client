@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AllProducts from "../../AllProducts/AllProducts";
 import HomeCart from "./HomeCart/HomeCart";
 import "./HomePageCart.css";
 const HomePageCart = () => {
@@ -8,8 +10,9 @@ const HomePageCart = () => {
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, []);
+  Cart.length = 6;
   return (
-    <div>
+    <div className="mt-5">
       <div className="hr-container my-5">
         <hr className="hr" />
       </div>
@@ -23,6 +26,12 @@ const HomePageCart = () => {
             <HomeCart key={cart._id} cart={cart}></HomeCart>
           ))}
         </div>
+      </div>
+
+      <div className="mt-5">
+        <Link className="see-all container " to="/allproducts">
+          See All Products 🡆
+        </Link>
       </div>
     </div>
   );

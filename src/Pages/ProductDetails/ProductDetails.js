@@ -1,10 +1,19 @@
 import { Button } from "bootstrap";
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
+  ////
+
+  const { quantityUpdate, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  ////
   const { productdetailsId } = useParams();
   const [Product, setProduct] = useState({});
   useEffect(() => {
@@ -41,15 +50,23 @@ const ProductDetails = () => {
         <div>
           <button className="my-4 deleverd-btn">Deleverd</button>
           <br />
-          <div className="d-flex justify-content-center mb-3">
+          <form
+            className="d-flex justify-content-center mb-3"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <input
               className="form-control w-50 me-3"
               type="number"
               name="number"
               id="number"
+              {...quantityUpdate("number")}
             />
-            <button className="ms-2 add-product-btn">Add Product</button>
-          </div>
+            <input
+              className="ms-2 add-product-btn"
+              type="submit"
+              value="Add Product"
+            />
+          </form>
         </div>
       </div>
     </div>

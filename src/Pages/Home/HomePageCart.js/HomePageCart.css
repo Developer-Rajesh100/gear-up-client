@@ -21,3 +21,23 @@
 .title{
     text-shadow: 2px 2px 5px rgb(79, 74, 74);
 }
+.see-all{
+    display: inline;
+    text-align: right;
+    background-color: #9b3f3f;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+
+}
+.see-all:hover{
+    display: inline;
+    text-align: right;
+    background-color: #792e2e;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 15px;
+}

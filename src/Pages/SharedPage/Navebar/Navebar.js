@@ -25,7 +25,7 @@ const Navebar = () => {
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/home#products">
+              {/* <Nav.Link as={Link} to="/home#products">
                 Products
               </Nav.Link>
               <Nav.Link as={Link} to="/home#bikes">
@@ -33,7 +33,7 @@ const Navebar = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/home#places">
                 Places
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>

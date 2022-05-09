@@ -28,7 +28,7 @@ const SignIn = () => {
   //GOOGLE SIGN IN
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
-  if (user) {
+  if (user || user1) {
     navigate(from, { replace: true });
   }
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -43,6 +43,7 @@ const SignIn = () => {
       </p>
     );
   }
+
   const resetPassword = async () => {
     const email = emailRef.current.value;
     if (email) {
