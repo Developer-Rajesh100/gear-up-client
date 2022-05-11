@@ -38,6 +38,11 @@ const Navebar = () => {
                 Blogs
               </Nav.Link>
             </Nav>
+            <Nav>
+              <Nav.Link as={Link} to="/allproducts">
+                All Products
+              </Nav.Link>
+            </Nav>
             {user ? (
               <Nav>
                 <Nav.Link onClick={handleSignOut}>Sign Out</Nav.Link>

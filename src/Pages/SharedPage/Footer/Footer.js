@@ -2,8 +2,11 @@ import React from "react";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <footer className="foot">
-      <h1 className="footer-section">This is footer section...</h1>
+    <footer className="footer-section">
+      <h2 className="background text-center">
+        {" "}
+        <strong>&#169; {new Date().getFullYear()}</strong>
+      </h2>
     </footer>
   );
 };

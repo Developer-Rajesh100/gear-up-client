@@ -1,7 +1,7 @@
-.foot{
-    /* bottom: 0; */
-}
+
 .footer-section{
+    margin-top: 300px;
     background-color: gray;
-    color: blueviolet;
+    color: white;
+    padding: 20px;
 }

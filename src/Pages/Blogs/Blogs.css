@@ -1,0 +1,27 @@
+.all-container{
+    margin-top: 100px;
+    text-align: left;
+}
+.all-container div p {
+    text-align: justify;
+}
+.con-1{
+    background-color: rgb(218, 218, 181);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.con-2{
+    background-color: rgb(182, 208, 218);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+
+}
+.con-3{
+    background-color: rgb(209, 178, 119);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+
+}

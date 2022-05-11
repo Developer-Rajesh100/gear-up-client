@@ -6,7 +6,7 @@ import "./HomePageCart.css";
 const HomePageCart = () => {
   const [Cart, setCart] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://warm-caverns-95911.herokuapp.com/product")
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, []);
