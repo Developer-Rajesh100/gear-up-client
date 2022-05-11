@@ -52,7 +52,7 @@ const ProductDetails = () => {
   //ADD QUENTITY
   const handleQuentity = (event) => {
     event.preventDefault();
-
+    ////Raj
     const stock = event.target.quantity.value;
     console.log(stock);
     if (stock) {
