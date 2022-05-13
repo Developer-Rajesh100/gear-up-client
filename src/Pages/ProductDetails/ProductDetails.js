@@ -3,44 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import product from "../AllProducts/Product/product";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
-  ////
-
-  // const { quantityUpdate, handleSubmit } = useForm();
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  // };
-
-  /*
-  //DELEVER
-  const handleDelever = (product) => {
-    const newQuentity = parseInt(product.quantity) - 1;
-    fetch(
-      `https://warm-caverns-95911.herokuapp.com/product/${productdetailsId}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ newQuentity }),
-      }
-    )
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setProduct({ ...product, quantity, newQuentity });
-        toast("Deleverd");
-      });
-  };
-*/
-  ////
   const { productdetailsId } = useParams();
   const [Product, setProduct] = useState({});
-
+  const { image, name, description, price, quantity, dealer } = Product;
   useEffect(() => {
     const url = `https://warm-caverns-95911.herokuapp.com/product/${productdetailsId}`;
     console.log(url);
@@ -48,16 +18,17 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [productdetailsId]);
-  const { image, name, description, price, quantity, dealer } = Product;
+
   //ADD QUENTITY
   const handleQuentity = (event) => {
     event.preventDefault();
-    ////Raj
     const stock = event.target.quantity.value;
     console.log(stock);
     if (stock) {
       const stockQuantity = parseInt(quantity) + parseInt(stock);
-      const url = `https://warm-caverns-95911.herokuapp.com/product/${productdetailsId}`;
+      console.log(stockQuantity);
+
+      const url = `http://localhost:5000/product/${productdetailsId}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -69,10 +40,33 @@ const ProductDetails = () => {
         .then((res) => res.json())
         .then((result) => {
           console.log(result);
-          setProduct({ ...product, quantity, stockQuantity });
+          setProduct({ ...Product, quantity: stockQuantity });
           toast("Stock Succesfully");
         });
     }
+  };
+  //Delever
+  let decrease = parseInt(quantity);
+
+  const handleDelever = (product) => {
+    // const newQuantity = (decrease -= 1);
+    const newQuantity = (product.quantity -= 1);
+    console.log(newQuantity);
+    const url = `http://localhost:5000/pd/${productdetailsId}`;
+    console.log(url);
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ newQuantity }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        setProduct({ ...product, quantity: newQuantity });
+        toast("Delever Succesfully");
+      });
   };
   return (
     <div className="d-flex justify-content-center">
@@ -99,7 +93,12 @@ const ProductDetails = () => {
           <b>Dealer: </b> <i>{dealer}</i>
         </p>
         <div>
-          <button className="my-4 deleverd-btn">Deleverd</button>
+          <button
+            onClick={() => handleDelever(Product)}
+            className="my-4 deleverd-btn"
+          >
+            Deleverd
+          </button>
           <br />
           {/* <form
             onSubmit={() => handleQuentity()}
