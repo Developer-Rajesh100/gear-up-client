@@ -28,7 +28,7 @@ const ProductDetails = () => {
       const stockQuantity = parseInt(quantity) + parseInt(stock);
       console.log(stockQuantity);
 
-      const url = `http://localhost:5000/product/${productdetailsId}`;
+      const url = `https://warm-caverns-95911.herokuapp.com/product/${productdetailsId}`;
       console.log(url);
       fetch(url, {
         method: "PUT",
@@ -52,7 +52,7 @@ const ProductDetails = () => {
     // const newQuantity = (decrease -= 1);
     const newQuantity = (product.quantity -= 1);
     console.log(newQuantity);
-    const url = `http://localhost:5000/pd/${productdetailsId}`;
+    const url = `https://warm-caverns-95911.herokuapp.com/pd/${productdetailsId}`;
     console.log(url);
     fetch(url, {
       method: "PUT",
@@ -100,22 +100,7 @@ const ProductDetails = () => {
             Deleverd
           </button>
           <br />
-          {/* <form
-            onSubmit={() => handleQuentity()}
-            className="d-flex justify-content-center mb-3"
-          >
-            <input
-              className="form-control w-50 me-3"
-              type="number"
-              name="quantity"
-              id="number"
-            />
-            <input
-              className="ms-2 add-product-btn"
-              type="submit"
-              value="Add Product"
-            />
-          </form> */}
+
           <form onSubmit={handleQuentity}>
             <input
               className="inp-field mb-3"
